@@ -17,7 +17,6 @@ public class PlusMinus {
                 .collect(toList());
 
         Result.plusMinus(arr);
-
         bufferedReader.close();
     }
 }
