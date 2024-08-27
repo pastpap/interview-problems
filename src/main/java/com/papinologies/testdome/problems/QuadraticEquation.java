@@ -1,6 +1,28 @@
 package com.papinologies.testdome.problems;
 
 public class QuadraticEquation {
+
+    /**
+     * Explanation:
+     * Discriminant Calculation: double discriminant = b * b - 4 * a * c;
+     * Root Calculation:
+     * When the discriminant is positive (D > 0), there are two distinct real roots,
+     * calculated using Math.sqrt(discriminant).
+     * When the discriminant is zero (D == 0), there is one repeated real root.
+     * When the discriminant is negative (D < 0), we return NaN for both roots,
+     * indicating no real roots. This assumes we do not handle complex roots.
+     * The Roots object is instantiated with the calculated roots and returned.
+     * Usage:
+     * Running the main method with the coefficients
+     * a=2,
+     * b=10, and
+     * c=8 will output the roots of the quadratic equation 2x^2 + 10x + 8 = 0.
+     * 
+     * @param a
+     * @param b
+     * @param c
+     * @return
+     */
     public static Roots findRoots(double a, double b, double c) {
 
         // Calculate the discriminant

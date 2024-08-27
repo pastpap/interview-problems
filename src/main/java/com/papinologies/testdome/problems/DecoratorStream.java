@@ -30,6 +30,26 @@ public class DecoratorStream extends OutputStream {
         write(result, 0, 4);
     }
 
+    /**
+     * Flag Initialization (isPrefixWritten): We add a boolean flag,
+     * isPrefixWritten, initialized to false. This flag is used to keep track of
+     * whether the prefix has already been written to the stream.
+     * 
+     * Check and Write Prefix: Inside the write(byte[] b, int off, int len) method,
+     * we first check if isPrefixWritten is false. If it is, we write the prefix to
+     * the stream using stream.write(prefix.getBytes("UTF-8")) to ensure the prefix
+     * is written in UTF-8 encoding. After writing, we set isPrefixWritten to true.
+     * 
+     * Write Data: After the prefix check, we directly write the provided bytes to
+     * the underlying stream with stream.write(b, off, len).
+     * 
+     * Main Method: The main method demonstrates the use of DecoratorStream by
+     * writing a byte array message and confirming that the prefix and message are
+     * correctly output.
+     * 
+     * This solution ensures the prefix is written only once and all bytes received
+     * in the write methods are correctly forwarded to the underlying OutputStream.
+     */
     @Override
     public void write(byte[] b, int off, int len) throws IOException {
         // Write the prefix if it hasn't been written yet

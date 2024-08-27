@@ -10,6 +10,36 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 public class Folders {
+
+    /**
+     * 
+     * Explanation of the Code:
+     * XML Parsing:
+     * 
+     * DocumentBuilderFactory and DocumentBuilder are used to parse the XML string
+     * into a Document object.
+     * Document represents the entire XML structure.
+     * NodeList and Traversing:
+     * 
+     * getElementsByTagName("folder") retrieves all <folder> elements from the XML.
+     * The method iterates through each Node in the NodeList.
+     * Check Folder Name:
+     * 
+     * For each Element node, it retrieves the name attribute.
+     * It checks if the folder name starts with the given startingLetter.
+     * Collecting Results:
+     * 
+     * If the name matches the criteria, it is added to the result collection.
+     * Output:
+     * 
+     * The main method demonstrates the functionality by printing folder names that
+     * start with 'u'.
+     * 
+     * @param xml
+     * @param startingLetter
+     * @return
+     * @throws Exception
+     */
     public static Collection<String> folderNames(String xml, char startingLetter) throws Exception {
         Collection<String> result = new ArrayList<>();
         // Parse the XML string
