@@ -1,6 +1,7 @@
 package com.papinologies.testdome.problems;
 
 public class Song {
+    @SuppressWarnings("unused")
     private String name;
     private Song nextSong;
 
