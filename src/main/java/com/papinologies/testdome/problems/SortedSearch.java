@@ -5,8 +5,7 @@ public class SortedSearch {
         return lower_bound(sortedArray, 0, sortedArray.length, lessThan);
     }
 
-    static int lower_bound(int arr[], int start,
-            int end, int x) {
+    static int lower_bound(int arr[], int start, int end, int x) {
         while (start < end) {
             int mid = (start + end) >> 1;
             if (arr[mid] >= x)
