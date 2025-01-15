@@ -2,13 +2,11 @@ package com.papinologies.testdome.problems;
 
 public class SortedSearch {
     public static int countNumbers(int[] sortedArray, int lessThan) {
-        return lower_bound(sortedArray, 0, sortedArray.length, lessThan);
-    }
-
-    static int lower_bound(int arr[], int start, int end, int x) {
+        int start = 0;
+        int end = sortedArray.length;
         while (start < end) {
-            int mid = (start + end) >> 1;
-            if (arr[mid] >= x)
+            int mid = (start + end) / 2;
+            if (lessThan <= sortedArray[mid])
                 end = mid;
             else
                 start = mid + 1;
